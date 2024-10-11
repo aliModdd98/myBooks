@@ -3,8 +3,14 @@ import Lottie from "lottie-react";
 import RocketLaunchOutlinedIcon from "@mui/icons-material/RocketLaunchOutlined";
 import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
 import bookAnimation from "./../../assets/book.json";
+import { useNavigate } from "react-router";
 
 const Welcome = () => {
+  const navigate = useNavigate();
+
+  const handleStartTrail = () => {
+    navigate("/books");
+  };
   return (
     <Box
       sx={{
@@ -82,7 +88,7 @@ const Welcome = () => {
               variant="contained"
               color="primary"
               size="large"
-              href="/books"
+              onClick={handleStartTrail}
               startIcon={<LibraryBooksIcon />}
               endIcon={<RocketLaunchOutlinedIcon />}
               sx={{
